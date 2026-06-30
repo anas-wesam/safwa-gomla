@@ -12,20 +12,20 @@ export async function GET(req: NextRequest) {
     let products;
     if (category && category !== "الكل" && search) {
       products = await sql`
-        SELECT * FROM products
+        SELECT *, COALESCE(image_url, image) as image_url FROM products
         WHERE category = ${category} AND name ILIKE ${"%" + search + "%"}
         ORDER BY created_at DESC
       `;
     } else if (category && category !== "الكل") {
       products = await sql`
-        SELECT * FROM products WHERE category = ${category} ORDER BY created_at DESC
+        SELECT *, COALESCE(image_url, image) as image_url FROM products WHERE category = ${category} ORDER BY created_at DESC
       `;
     } else if (search) {
       products = await sql`
-        SELECT * FROM products WHERE name ILIKE ${"%" + search + "%"} ORDER BY created_at DESC
+        SELECT *, COALESCE(image_url, image) as image_url FROM products WHERE name ILIKE ${"%" + search + "%"} ORDER BY created_at DESC
       `;
     } else {
-      products = await sql`SELECT * FROM products ORDER BY created_at DESC`;
+      products = await sql`SELECT *, COALESCE(image_url, image) as image_url FROM products ORDER BY created_at DESC`;
     }
 
     return NextResponse.json(products);

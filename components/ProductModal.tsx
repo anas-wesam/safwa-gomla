@@ -32,9 +32,9 @@ export default function ProductModal({ product, onClose }: Props) {
         </button>
 
         <div className="w-full bg-gray-900" style={{ height: "260px" }}>
-          {product.image_url ? (
+          {(product.image_url || product.image) ? (
             <img
-              src={product.image_url}
+              src={product.image_url || product.image || ""}
               alt={product.name}
               className="w-full h-full object-contain p-4"
             />
