@@ -36,20 +36,20 @@ export default function Home() {
     <main className="min-h-screen" style={{ background: "#0a0a0a" }}>
       <header style={{ background: "#0f0f0f", borderBottom: "1px solid #222" }}>
         {/* Contact bar */}
-        <div style={{ background: "#111", borderBottom: "1px solid #1a1a1a" }}>
-          <div className="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-400">
-            <div className="flex flex-wrap items-center gap-4">
-              <a href="tel:01119438250" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
-                📞 01119438250
+        <div style={{ background: "#111", borderBottom: "1px solid #222" }}>
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-5">
+              <a href="tel:01119438250" className="flex items-center gap-2 font-bold transition-colors hover:text-yellow-400" style={{ color: "#d1d5db", fontSize: "15px" }}>
+                📞 <span>01119438250</span>
               </a>
-              <a href="mailto:safwaalsafwa2@gmail.com" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
-                ✉️ safwaalsafwa2@gmail.com
+              <a href="mailto:safwaalsafwa2@gmail.com" className="flex items-center gap-2 font-bold transition-colors hover:text-yellow-400" style={{ color: "#d1d5db", fontSize: "15px" }}>
+                ✉️ <span>safwaalsafwa2@gmail.com</span>
               </a>
-              <a href="https://www.instagram.com/elsafwaimport" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
-                📸 elsafwaimport@
+              <a href="https://www.instagram.com/elsafwaimport" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold transition-colors hover:text-yellow-400" style={{ color: "#d1d5db", fontSize: "15px" }}>
+                📸 <span>elsafwaimport@</span>
               </a>
             </div>
-            <a href="/admin" className="text-gray-600 hover:text-gray-300 transition-colors">إدارة</a>
+            <a href="/admin" className="text-sm text-gray-600 hover:text-gray-300 transition-colors">إدارة</a>
           </div>
         </div>
         {/* Logo */}
