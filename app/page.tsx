@@ -35,7 +35,25 @@ export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: "#0a0a0a" }}>
       <header style={{ background: "#0f0f0f", borderBottom: "1px solid #222" }}>
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Contact bar */}
+        <div style={{ background: "#111", borderBottom: "1px solid #1a1a1a" }}>
+          <div className="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-400">
+            <div className="flex flex-wrap items-center gap-4">
+              <a href="tel:01119438250" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
+                📞 01119438250
+              </a>
+              <a href="mailto:safwaalsafwa2@gmail.com" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
+                ✉️ safwaalsafwa2@gmail.com
+              </a>
+              <a href="https://www.instagram.com/elsafwaimport" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors flex items-center gap-1">
+                📸 elsafwaimport@
+              </a>
+            </div>
+            <a href="/admin" className="text-gray-600 hover:text-gray-300 transition-colors">إدارة</a>
+          </div>
+        </div>
+        {/* Logo */}
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
           <div className="flex items-center gap-3">
             <span className="text-3xl font-black" style={{ color: "#f59e0b" }}>الص</span>
             <div>
@@ -43,7 +61,6 @@ export default function Home() {
               <p className="text-xs" style={{ color: "#f59e0b" }}>لجملة الجملة</p>
             </div>
           </div>
-          <a href="/admin" className="text-xs text-gray-600 hover:text-gray-300 transition-colors">إدارة</a>
         </div>
       </header>
 
