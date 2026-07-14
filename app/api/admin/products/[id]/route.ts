@@ -11,12 +11,12 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   try {
     const sql = getDb();
     const body = await req.json();
-    const { name, price, unit, min_order, carton_qty, discount, category, image_url, description } = body;
+    const { name, price, unit, min_order, pieces_per_carton, discount, category, image_url, description } = body;
     const result = await sql`
       UPDATE products SET
         name=${name}, price=${price}, unit=${unit}, min_order=${min_order},
-        carton_qty=${carton_qty || null}, discount=${discount || null},
-        category=${category}, image_url=${image_url || null}, description=${description || null}
+        pieces_per_carton=${pieces_per_carton || null}, discount=${discount || null},
+        category=${category}, image=${image_url || null}, description=${description || null}
       WHERE id=${id} RETURNING *
     `;
     return NextResponse.json(result[0]);

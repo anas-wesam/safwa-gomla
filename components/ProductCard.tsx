@@ -59,7 +59,7 @@ export default function ProductCard({ product, onClick }: Props) {
         </div>
         <div className="mt-2 flex flex-wrap gap-2 text-xs text-gray-400">
           <span>أدنى: {product.min_order} {product.unit}</span>
-          {product.carton_qty && <span>• كرتونة: {product.carton_qty}</span>}
+          {product.pieces_per_carton && <span>• كرتونة: {product.pieces_per_carton}</span>}
         </div>
       </div>
     </div>

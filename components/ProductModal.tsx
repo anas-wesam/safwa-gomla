@@ -84,10 +84,10 @@ export default function ProductModal({ product, onClose }: Props) {
               <div className="text-xs text-gray-400 mb-1">الحد الأدنى للطلب</div>
               <div className="font-bold text-white">{product.min_order} {product.unit}</div>
             </div>
-            {product.carton_qty && (
+            {product.pieces_per_carton && (
               <div className="rounded-lg p-3 text-center" style={{ background: "#1e1e1e" }}>
                 <div className="text-xs text-gray-400 mb-1">القطع في الكرتونة</div>
-                <div className="font-bold text-white">{product.carton_qty} قطعة</div>
+                <div className="font-bold text-white">{product.pieces_per_carton} قطعة</div>
               </div>
             )}
           </div>

@@ -9,7 +9,7 @@ const emptyForm = {
   price: "",
   unit: "قطعة",
   min_order: "1",
-  carton_qty: "",
+  pieces_per_carton: "",
   discount: "",
   category: "أدوات منزلية متنوعة",
   image_url: "",
@@ -72,7 +72,7 @@ export default function AdminPage() {
       ...form,
       price: parseFloat(form.price),
       min_order: parseInt(form.min_order),
-      carton_qty: form.carton_qty ? parseInt(form.carton_qty) : null,
+      pieces_per_carton: form.pieces_per_carton ? parseInt(form.pieces_per_carton) : null,
       discount: form.discount ? parseInt(form.discount) : null,
     };
     const url = editId ? `/api/admin/products/${editId}` : "/api/admin/products";
@@ -109,7 +109,7 @@ export default function AdminPage() {
       price: String(p.price),
       unit: p.unit,
       min_order: String(p.min_order),
-      carton_qty: p.carton_qty ? String(p.carton_qty) : "",
+      pieces_per_carton: p.pieces_per_carton ? String(p.pieces_per_carton) : "",
       discount: p.discount ? String(p.discount) : "",
       category: p.category,
       image_url: p.image_url || "",
@@ -178,7 +178,7 @@ export default function AdminPage() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <input required type="number" className={inputClass} style={inputStyle} placeholder="الحد الأدنى *" value={form.min_order} onChange={(e) => setForm(f => ({ ...f, min_order: e.target.value }))} />
-              <input type="number" className={inputClass} style={inputStyle} placeholder="قطع الكرتونة" value={form.carton_qty} onChange={(e) => setForm(f => ({ ...f, carton_qty: e.target.value }))} />
+              <input type="number" className={inputClass} style={inputStyle} placeholder="قطع الكرتونة" value={form.pieces_per_carton} onChange={(e) => setForm(f => ({ ...f, pieces_per_carton: e.target.value }))} />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <input type="number" min="0" max="100" className={inputClass} style={inputStyle} placeholder="خصم %" value={form.discount} onChange={(e) => setForm(f => ({ ...f, discount: e.target.value }))} />
